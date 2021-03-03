@@ -260,8 +260,8 @@ alert(JSON.stringify(response));
 ##### a. Mandatory Parameters:
   
 1.  **keywords** (string) e.g. FODCOF, Shoes, Coffee, Versace, Gucci, H&M, Adidas, Starbucks, B130 {POI, House Number, keyword, tag}
-2.  **refLocation**  {string (latitude[double],longitude[double])}: Provides the location around which the search will be performed. e.g. refLocation=28.454,77.435
-3. **response** : successcallback of api call
+2.  **refLocation**  {string (latitude[double],longitude[double])}: Provides the location around which the search will be performed. It also supports Eloc. E.g. refLocation=28.454,77.435 or refLocation="MMI000"
+4. **response** : successcallback of api call
 
 ##### b. Optional Parameters:
 1.  **page**  (integer): provides number of the page to provide results from.
