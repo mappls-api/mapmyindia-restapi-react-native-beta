@@ -272,7 +272,7 @@ alert(JSON.stringify(response));
 4.  **bounds** (string) : Allows the developer to send in map bounds to provide a nearby search within the bounds.
     {e.g. (bounds("28.56812,77.240519;28.532790,77.290854"))
 5.   **filter** (string) : This parameter helps you get a specific type of EV charging Station
-    -   **filter** = model:(string);brandId:(string);plugType:(string) {e.g. filter("brandId:B420;plugType:IEC")} where B420 is brandId for Mahindra Electric and IEC is plugType.
+    -   **filter** = model:(string);brandId:(string);plugType:(string)
   
 
 ```javascript
