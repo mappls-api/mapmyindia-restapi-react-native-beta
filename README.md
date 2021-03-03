@@ -269,7 +269,10 @@ alert(JSON.stringify(response));
     a)  **dist:asc**  &  **dist:desc**  - will sort data in order of distance from the passed location (default).  
     b)  **name:asc**  &  **name:desc**  - will sort the data on alphabetically bases.
 3.  **radius**  (integer): provides the range of distance to search over (default: 1000, min: 500, max: 10000).
-4.  **bounds** (string) (x1,y1;x2,y2): Allows the developer to send in map bounds to provide a nearby search of the geobounds. where x1,y1 are the lat lng of.
+4.  **bounds** (string) : Allows the developer to send in map bounds to provide a nearby search within the bounds.
+    {e.g. (bounds("28.56812,77.240519;28.532790,77.290854"))
+5.   **filter** (string) : This parameter helps you get a specific type of EV charging Station
+    -   **filter** = model:(string);brandId:(string);plugType:(string) {e.g. filter("brandId:B420;plugType:IEC")} where B420 is brandId for Mahindra Electric and IEC is plugType.
   
 
 ```javascript
