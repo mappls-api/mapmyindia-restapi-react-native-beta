@@ -186,9 +186,9 @@ Mapmyindia.setClientSecret('AtlasClientSecret');
 *  <a  href="#distance-matrix-eta">Distance Matrix ETA</a><br/>
 
   
-
 ### Place Details()
 
+The Place detail API is to extract the details of a place with the help of its eLoc i.e. a 6 character code. Since a place may or may not have additional attributes associated with it, the response from the place details may be different for each record. However the response will be an extract from an existing set of master key-value pairs grouped as objects.
   
 
 #### Request Parameters
@@ -201,15 +201,64 @@ Mapmyindia.setClientSecret('AtlasClientSecret');
 
 ```javascript
 
-Mapmyindia.placeDetails({eloc: 'MMI000'}, (response) => {
+Mapmyindia.place_details({eloc: 'MMI000'}, (response) => {
 
 alert(JSON.stringify(response));
 
 });
 
 ```
+## [Place Detail with Sub Template based Configuration](#Place_Detail_with_Sub_Template_based_Configuration)
 
-  
+The API is highly configurable to  configuration enables to provide the required set of attributes to the user on the basis of assigned sub templates.
+The default configuration with available with basic pay-as-you-go rates is that of `General Details` subtemplate.
+
+## [Response Parameters for Place Details - Sub Templates](#Response_Parameters_for_Place_Details-Sub_Templates)
+
+The parameters are group in sub templates. Here is the list of attributes with sub template information.  
+
+#### [Subtemplate 1 : General Details](#Subtemplate_1_:_Sbt_general_details)
+1.	Eloc (string) : 6 characters alphanumeric unique identifier 
+2.	placeName (string) : Name of the place 
+3.	address (string) : address of the place 
+4.	type: defines the type of location matched (HOUSE_NUMBER, HOUSE_NAME, POI, 
+	STREET, SUB_LOCALITY, LOCALITY, VILLAGE, DISTRICT, SUB_DISTRICT, CITY, STATE, 
+     SUBSUBLOCALITY, PINCODE)
+
+#### [Subtemplate 2 : Admin Tokens (PREMIUM OFFERING)](#Subtemplate_2_:_sbt_admin_token)
+1.	city (string): The name of the city in which the location exists.
+2.	district (string): The name of the district in which the location exists.
+3.	pincode (string): The pin code of the location area.
+4.	subDistrict (string): The name of the sub-district in which the location exists. 
+5.	state (string): The name of the state in which the location exists.
+
+#### [Subtemplate 3 : Address Tokens (PREMIUM OFFERING)](#Subtemplate_3_:_sbt_address_token)
+1.	houseNumber (string): The house number of the location. 
+2.	houseName (string): The name of the location.
+3.	locality (string): The name of the locality where the location exists. 
+4.	street (string): The name of the street of the location.
+5.	subSubLocality (string): The name of the sub-sub-locality where the location exists. 
+6.	subLocality (string): The name of the sub-locality where the location exists.
+7.	village (string): The name of the village if the location exists in a village.
+8.	poi (string): The name of the POI if the location is a place of interest (POI).
+
+#### [Subtemplate 4 : Contact Details (PREMIUM OFFERING)](#Subtemplate_4_:_sbt_contact_details)
+
+1.	Email
+2.	Mobile
+3.	Telephone
+4.	Website
+
+
+#### [Subtemplate 5 : Location Coordinates (PREMIUM OFFERING)](#Subtemplate_5_:_sbt_loc_coordinates)
+
+1.	latitude(double): The latitude of the location. 
+2.	longitude(double): The longitude of the location.
+
+#### [Subtemplate 6 : E/E Coordinates (PREMIUM OFFERING)](#Subtemplate_6_:_sbt_nav_coordinates)
+
+1.	Entry_lat(double):The entry latitude of the location.
+2.	Entry_lon(double):The entry longitude of the location.
   
 
 ### Atlas AutoSuggest()
@@ -479,7 +528,27 @@ alert(JSON.stringify(response));
 });
 
 ```
+### Legacy Place Details API - Place Details()
 
+  
+
+#### Request Parameters
+##### a. Mandatory Parameters:
+
+1.  **eloc**: the id or eLoc of the place whose details are required. The 6-digit alphanumeric  
+    code for any location. (e.g. mmi000).
+2. **response** : successcallback of api call
+  
+
+```javascript
+
+Mapmyindia.placeDetails({eloc: 'MMI000'}, (response) => {
+
+alert(JSON.stringify(response));
+
+});
+
+```
   
   
 
