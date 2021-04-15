@@ -195,14 +195,14 @@ The Place detail API is to extract the details of a place with the help of its e
 #### Request Parameters
 ##### a. Mandatory Parameters:
 
-1.  **eloc**: the id or eLoc of the place whose details are required. The 6-digit alphanumeric  
+1.  **eLoc**: the id or eLoc of the place whose details are required. The 6-digit alphanumeric  
     code for any location. (e.g. mmi000).
 2. **response** : successcallback of api call
   
 
 ```javascript
 
-Mapmyindia.place_details({eloc: 'MMI000'}, (response) => {
+Mapmyindia.place_details({eLoc: 'MMI000'}, (response) => {
 
 alert(JSON.stringify(response));
 
